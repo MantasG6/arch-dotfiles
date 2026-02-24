@@ -64,40 +64,26 @@ chsh -s $(which zsh)
 curl -s https://ohmyposh.dev/install.sh | bash -s
 sudo pacman -S --needed --noconfirm stow
 sudo pacman -S --needed --noconfirm ripgrep
+sudo pacman -S --needed --noconfirm grim slurp swappy
 # Copy over the configurations
-cp -r ./conf/mako ~/.config/
-sudo cp -r ./conf/greetd /etc/
-cp -r ./conf/wofi ~/.config/
-cp -r ./wallpapers ~/Pictures/
+stow .
+stow -t ~/.config .config
+sudo ln -s ~/dotfiles/.other/greetd /etc
 mkdir ~/.local/share/icons 
-cp -r ./Red-C ~/.local/share/icons/
-cp -r ./conf/waybar ~/.config/
-cp -r ./conf/hypr ~/.config/
-cp -r ./conf/fastfetch ~/.config/
-sudo cp ./conf/faillock.conf /etc/security/
-cp -r ./conf/nwg-look ~/.local/share/
-cp -r ./conf/qt5ct ~/.config/
-cp -r ./conf/qt6ct ~/.config/
-cp -r ./conf/procps ~/.config/
-cp -r ./conf/ghostty ~/.config/
+ln -s ~/dotfiles/.other/Red-C ~/.local/share/icons
+ln -s ~/dotfiles/.other/faillock.conf /etc/security
+ln -s ~/dotfiles/.other/nwg-look ~/.local/share
 # Make bluetooth fast when charging
-sudo cp ./conf/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
-sudo chmod 775 /usr/local/bin/toggle_bt_fast_connect.sh
-sudo cp ./conf/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
-sudo cp ./conf/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/bt-fast-conn.service
-sudo cp ./conf/bt-fast-conn/bt-fast-conn /usr/lib/systemd/system-sleep/bt-fast-conn
-sudo chmod 775 /usr/lib/systemd/system-sleep/bt-fast-conn
-sudo chown root:root /etc/udev/rules.d/99-bt-power.rules
-sudo chown root:root /etc/systemd/system/bt-fast-conn.service
-sudo chown root:root /usr/lib/systemd/system-sleep/bt-fast-conn
-sudo chown root:root /usr/local/bin/toggle_bt_fast_connect.sh
+sudo ln -s ~/dotfiles/.other/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
+sudo ln -s ~/dotfiles/.other/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
+sudo ln -s ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/bt-fast-conn.service
+sudo ln -s ~/dotfiles/.other/bt-fast-conn/bt-fast-conn /usr/lib/systemd/system-sleep/bt-fast-conn
 sudo udevadm control --reload
 sudo systemctl daemon-reload
-# Uncomment if you use fingerprint
-#sudo pacman -S --needed --noconfirm fprintd
-#paru -S --needed --noconfirm pam-fprint-grosshack
-# Fingerprint configurations. Uncomment if you use fingerprint
-#sudo cp ./conf/fprint/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
-#sudo cp ./conf/fprint/hyprlock /etc/pam.d/
-#sudo cp ./conf/fprint/sudo /etc/pam.d/
-#sudo cp ./conf/fprint/su /etc/pam.d/
+# Fingerprint setup
+sudo pacman -S --needed --noconfirm fprintd
+paru -S --needed --noconfirm pam-fprint-grosshack
+sudo ln -fs ~/dotfiles/.other/fprint/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
+sudo ln -fs ~/dotfiles/.other/fprint/hyprlock /etc/pam.d/
+sudo ln -fs ~/dotfiles/.other/fprint/sudo /etc/pam.d/
+sudo ln -fs ~/dotfiles/.other/fprint/su /etc/pam.d/
