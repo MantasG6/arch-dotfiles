@@ -65,6 +65,7 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 sudo pacman -S --needed --noconfirm stow
 sudo pacman -S --needed --noconfirm ripgrep
 sudo pacman -S --needed --noconfirm grim slurp swappy
+sudo pacman -S --needed --noconfirm fd
 # Copy over the configurations
 stow .
 stow -t ~/.config .config
