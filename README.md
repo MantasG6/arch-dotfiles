@@ -18,4 +18,4 @@ Before installing be sure to download new ISO and mount it. Arch Linux keys are 
 # fix Spotify
 edit /etc/spotify-launcher.conf
 
-# Use initial_setup_arch.sh to do the rest
+# Use do_magic.sh to do the rest
