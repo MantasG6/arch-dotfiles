@@ -47,11 +47,28 @@
       "alignment": "right",
       "segments": [
 	{
+	  "type": "kubectl",
+	  "style": "diamond",
+	  "leading_diamond": "",
+	  "trailing_diamond": " ",
+          "foreground": "#FFFFFF",
+	  "background": "#326CE5",
+	  "template": "󱃾 {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} "
+	},
+	{
+	  "type": "python",
+	  "style": "diamond",
+	  "leading_diamond": "",
+	  "trailing_diamond": " ",
+  	  "foreground": "#ffd43b",
+	  "background": "#306998",
+	  "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+	},
+	{
 	  "type": "executiontime",
 	  "style": "diamond",
 	  "leading_diamond": "",
 	  "trailing_diamond": "",
-	  "powerline_symbol": "",
 	  "foreground": "#161a1d",
 	  "background": "#ba181b",
 	  "template": " <#151a1d></> {{ .FormattedMs }} ",
