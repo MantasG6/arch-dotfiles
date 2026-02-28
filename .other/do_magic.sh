@@ -32,6 +32,8 @@ sudo pacman -S --needed --noconfirm brightnessctl
 sudo pacman -S --needed --noconfirm playerctl
 sudo pacman -S --needed --noconfirm greetd-tuigreet
 sudo systemctl enable greetd.service
+# Setup Login screen
+sh ~/dotfiles/.other/setup_login.sh
 sudo pacman -S --needed --noconfirm wofi
 sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm hyprpaper
@@ -66,27 +68,13 @@ sudo pacman -S --needed --noconfirm stow
 sudo pacman -S --needed --noconfirm ripgrep
 sudo pacman -S --needed --noconfirm grim slurp swappy
 sudo pacman -S --needed --noconfirm fd
-# Copy over the configurations
-stow .
-stow -t ~/.config .config
-sudo ln -s ~/dotfiles/.other/greetd /etc
+# Link configurations
+stow -t ~/ ~/dotfiles
+stow -t ~/.config ~/dotfiles/.config
 mkdir ~/.local/share/icons 
 ln -s ~/dotfiles/.other/Red-C ~/.local/share/icons
-ln -s ~/dotfiles/.other/faillock.conf /etc/security
 ln -s ~/dotfiles/.other/nwg-look ~/.local/share
 # Make bluetooth fast when charging
-sudo ln -s ~/dotfiles/.other/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
-sudo ln -s ~/dotfiles/.other/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
-sudo cp ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/
-sudo ln -fs /etc/systemd/system/bt-fast-conn.service ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service
-sudo ln -s ~/dotfiles/.other/bt-fast-conn/bt-fast-conn /usr/lib/systemd/system-sleep/bt-fast-conn
-sudo udevadm control --reload
-sudo systemctl daemon-reload
-sudo systemctl enable bt-fast-conn.service
+sh ~/dotfiles/.other/bt-fast-conn/setup_bt-fast-conn.sh
 # Fingerprint setup
-sudo pacman -S --needed --noconfirm fprintd
-paru -S --needed --noconfirm pam-fprint-grosshack
-sudo ln -fs ~/dotfiles/.other/fprint/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
-sudo ln -fs ~/dotfiles/.other/fprint/hyprlock /etc/pam.d/
-sudo ln -fs ~/dotfiles/.other/fprint/sudo /etc/pam.d/
-sudo ln -fs ~/dotfiles/.other/fprint/su /etc/pam.d/
+sh ~/dotfiles/.other/fprint/setup_fprint.sh
