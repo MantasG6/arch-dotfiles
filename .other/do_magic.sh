@@ -77,10 +77,12 @@ ln -s ~/dotfiles/.other/nwg-look ~/.local/share
 # Make bluetooth fast when charging
 sudo ln -s ~/dotfiles/.other/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
 sudo ln -s ~/dotfiles/.other/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
-sudo ln -s ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/bt-fast-conn.service
+sudo cp ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/
+sudo ln -fs /etc/systemd/system/bt-fast-conn.service ~/dotfiles/.other/bt-fast-conn/bt-fast-conn.service
 sudo ln -s ~/dotfiles/.other/bt-fast-conn/bt-fast-conn /usr/lib/systemd/system-sleep/bt-fast-conn
 sudo udevadm control --reload
 sudo systemctl daemon-reload
+sudo systemctl enable bt-fast-conn.service
 # Fingerprint setup
 sudo pacman -S --needed --noconfirm fprintd
 paru -S --needed --noconfirm pam-fprint-grosshack
