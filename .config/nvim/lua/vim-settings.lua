@@ -9,4 +9,4 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 -- Keymaps
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>-", vim.cmd.Ex)
