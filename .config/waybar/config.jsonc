@@ -60,7 +60,7 @@
 	        "today": "<span color='#ba181b'><b><u>{}</u></b></span>"
 	    }
 	},
-	"on-click": "$BROWSER calendar.google.com && hyprctl dispatch focuswindow \"class:^($BROWSER)$\""
+	"on-click": "$BROWSER calendar.google.com"
     },
     // Right modules
     "hyprland/language": {
@@ -84,7 +84,7 @@
 	    "default": [" ⣀⣄⣀⣀⣀⣀⣀", " ⣀⣄⣤⣦⣀⣀⣀", " ⣀⣄⣤⣦⣶⣀⣀", " ⣀⣄⣤⣦⣶⣷⣀", " ⣀⣄⣤⣦⣶⣷⣿"]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-	"on-click-right": "pavucontrol && hyprctl dispatch focuswindow \"class:^(pavucontrol)$\"",
+	"on-click-right": "pavucontrol",
 	"max-volume": 150
     },
     "network": {
