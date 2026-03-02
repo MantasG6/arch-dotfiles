@@ -2,6 +2,8 @@ sudo pacman -S --needed --noconfirm base-devel git
 # For man choose 1st option (man-db)
 sudo pacman -S --needed --noconfirm man
 sudo pacman -S --needed --noconfirm nvim
+sudo pacman -S --needed --noconfirm tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S --needed --noconfirm wget
 sudo pacman -S --needed --noconfirm xdg-user-dirs
 xdg-user-dirs-update
