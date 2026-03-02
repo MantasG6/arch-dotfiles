@@ -31,6 +31,8 @@ setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming his
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -laF'
+alias vi='nvim'
+alias vim='nvim'
 
 eval "$(oh-my-posh init zsh --config ~/.mantastheme.omp.json)"
 
