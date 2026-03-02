@@ -50,3 +50,7 @@
 
 theme = Elementary
 font-family = JetBrainsMono Nerd Font
+
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
