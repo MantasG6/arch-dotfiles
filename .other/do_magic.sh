@@ -71,8 +71,8 @@ sudo pacman -S --needed --noconfirm ripgrep
 sudo pacman -S --needed --noconfirm grim slurp swappy
 sudo pacman -S --needed --noconfirm fd
 # Link configurations
-stow -t ~/ ~/dotfiles
-stow -t ~/.config ~/dotfiles/.config
+stow -t ~/ -d ~/dotfiles .
+stow -t ~/.config -d ~/dotfiles .config
 mkdir ~/.local/share/icons 
 ln -s ~/dotfiles/.other/Red-C ~/.local/share/icons
 ln -s ~/dotfiles/.other/nwg-look ~/.local/share
