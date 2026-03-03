@@ -18,6 +18,10 @@ return {
       },
       sections = {
         lualine_c = {
+          {
+            'filename',
+            path = 4,
+          },
           '%=',
           {
             "harpoon2",
@@ -30,6 +34,7 @@ return {
           },
         },
         lualine_x = {
+          'encoding',
           {
             'fileformat',
             icons_enabled = true,
@@ -39,12 +44,10 @@ return {
               mac = 'CR',
             },
           },
+          'filetype',
         },
       }
     },
-  },
-  {
-    'nvim-tree/nvim-web-devicons',
-    opts = {}
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 }
