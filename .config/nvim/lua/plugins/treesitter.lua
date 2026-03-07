@@ -42,6 +42,8 @@ return {
                     -- The [0][0] targets the current window and current tab
                     vim.wo[0][0].foldmethod = "expr"
                     vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                    -- prevent files from opening with all folds closed
+                    vim.wo[0][0].foldlevel = 99
 
                     -- 3. Indentation (Buffer-local)
                     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
