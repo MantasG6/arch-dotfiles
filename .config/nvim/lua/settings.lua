@@ -16,6 +16,29 @@ vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 100
 vim.opt.termguicolors = true
+vim.opt.hlsearch = false
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
 
 -- Keymaps
+-- Go to explore with leader + -
 vim.keymap.set("n", "<leader>-", vim.cmd.Ex)
+-- move code blocks up and down with K and J
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- don't put cursor at the end when using J
+vim.keymap.set("n", "J", "mzJ`z")
+-- keep it at the center
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+-- leader + p or d will replace / delete to void and keep the clipboard in tact
+vim.keymap.set("n", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
+-- just go back to normal mode with <C-c>
+vim.keymap.set("i", "<C-c>", "<Esc>")
+-- quickfix keymaps
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
