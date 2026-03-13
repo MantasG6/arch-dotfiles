@@ -33,5 +33,46 @@ return {
 
             signature = { enabled = true },
         },
-    }
+    },
+    {
+        "mason-org/mason.nvim",
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        },
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = {
+                "lua_ls@3.16.4",
+                "bashls",
+                "pylsp",
+                "stylua",
+                "typos_lsp",
+            },
+        },
+        dependencies = {
+            "mason-org/mason.nvim",
+            "neovim/nvim-lspconfig",
+        },
+    },
+    {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        opts = {
+            ensure_installed = {
+                "shfmt",
+                "tree-sitter-cli",
+            },
+            auto_update = true,
+        },
+        dependencies = {
+            "mason-org/mason.nvim",
+        },
+    },
 }

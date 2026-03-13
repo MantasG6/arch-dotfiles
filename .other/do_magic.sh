@@ -1,3 +1,4 @@
+sudo pacman -Syu
 sudo pacman -S --needed --noconfirm base-devel git
 # For man choose 1st option (man-db)
 sudo pacman -S --needed --noconfirm man
@@ -70,6 +71,8 @@ sudo pacman -S --needed --noconfirm stow
 sudo pacman -S --needed --noconfirm ripgrep
 sudo pacman -S --needed --noconfirm grim slurp swappy
 sudo pacman -S --needed --noconfirm fd
+paru -S --needed --noconfirm miraclecast-git
+sudo pacman -S --needed --noconfirm npm
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
