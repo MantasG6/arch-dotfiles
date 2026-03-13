@@ -39,6 +39,5 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 -- just go back to normal mode with <C-c>
 vim.keymap.set("i", "<C-c>", "<Esc>")
--- quickfix keymaps
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- open diagnostic(errors, warnings, etc.) in quickfix
+vim.keymap.set('n', '<leader>sd', vim.diagnostic.setqflist)
