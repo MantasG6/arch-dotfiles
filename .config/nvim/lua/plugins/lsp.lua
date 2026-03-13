@@ -55,6 +55,7 @@ return {
                 "pylsp",
                 "stylua",
                 "typos_lsp",
+                "taplo",
             },
         },
         dependencies = {

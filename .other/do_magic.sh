@@ -73,6 +73,8 @@ sudo pacman -S --needed --noconfirm grim slurp swappy
 sudo pacman -S --needed --noconfirm fd
 paru -S --needed --noconfirm miraclecast-git
 sudo pacman -S --needed --noconfirm npm
+sudo pacman -S --needed --noconfirm yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+ya pkg add BennyOe/tokyo-night
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
