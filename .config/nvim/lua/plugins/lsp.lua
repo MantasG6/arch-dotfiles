@@ -67,7 +67,7 @@ return {
         opts = {
             ensure_installed = {
                 "shfmt",
-                "tree-sitter-cli",
+                { "tree-sitter-cli", version = "v0.24.5" },
             },
             auto_update = true,
         },
