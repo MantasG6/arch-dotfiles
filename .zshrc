@@ -37,6 +37,8 @@ alias vi='nvim'
 alias vim='nvim'
 
 eval "$(oh-my-posh init zsh --config ~/.mantastheme.omp.json)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
