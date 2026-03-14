@@ -32,18 +32,17 @@ return {
 
             vim.api.nvim_create_autocmd("FileType", {
                 callback = function()
-                    -- 1. Highlighting
-                    pcall(vim.treesitter.start)
-
-                    -- 2. Folding (Window-local)
-                    -- The [0][0] targets the current window and current tab
-                    vim.wo[0][0].foldmethod = "expr"
-                    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-                    -- prevent files from opening with all folds closed
-                    vim.wo[0][0].foldlevel = 99
-
-                    -- 3. Indentation (Buffer-local)
-                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    vim.schedule(function()
+                        -- 1. Highlighting
+                        pcall(vim.treesitter.start)
+                        -- 2. Folding (Window-local)
+                        vim.wo[0][0].foldmethod = "expr"
+                        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                        -- prevent files from opening with all folds closed
+                        vim.wo[0][0].foldlevel = 99
+                        -- 3. Indentation (Buffer-local)
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    end)
                 end,
             })
         end,
