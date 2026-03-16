@@ -75,7 +75,10 @@ paru -S --needed --noconfirm miraclecast-git
 sudo pacman -S --needed --noconfirm npm
 sudo pacman -S --needed --noconfirm yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
 ya pkg add BennyOe/tokyo-night
-sudo pacman -S --needed --needed transmission-gtk
+sudo pacman -S --needed --noconfirm transmission-gtk
+paru -S --needed --noconfirm windscribe-v2-bin
+sudo pacman -S --needed --noconfirm vlc
+sudo pacman -S --needed --noconfirm vlc-plugins-all
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
