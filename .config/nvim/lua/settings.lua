@@ -20,6 +20,15 @@ vim.opt.hlsearch = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
+-- highlight motions when yanking or doing other actions
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+    callback = function ()
+        vim.highlight.on_yank()
+    end,
+})
+
 -- Keymaps
 -- Go to explore with leader + -
 vim.keymap.set("n", "<leader>-", vim.cmd.Ex)
