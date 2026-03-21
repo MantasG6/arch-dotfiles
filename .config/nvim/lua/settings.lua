@@ -21,12 +21,12 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 -- highlight motions when yanking or doing other actions
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-    callback = function ()
-        vim.highlight.on_yank()
-    end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 -- Keymaps
@@ -43,10 +43,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 -- leader + p or d will replace / delete to void and keep the clipboard in tact
-vim.keymap.set("n", "<leader>p", "\"_dP")
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>p", '"_dP')
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
 -- just go back to normal mode with <C-c>
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- open diagnostic(errors, warnings, etc.) in quickfix
-vim.keymap.set('n', '<leader>sd', vim.diagnostic.setqflist)
+vim.keymap.set("n", "<leader>sd", vim.diagnostic.setqflist)
