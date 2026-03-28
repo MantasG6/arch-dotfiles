@@ -17,9 +17,9 @@ vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 100
 vim.opt.termguicolors = true
-vim.opt.hlsearch = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
+vim.opt.undofile = true
 
 -- highlight motions when yanking or doing other actions
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -51,3 +51,5 @@ vim.keymap.set("v", "<leader>d", '"_d')
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- open diagnostic(errors, warnings, etc.) in quickfix
 vim.keymap.set("n", "<leader>sd", vim.diagnostic.setqflist)
+-- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
