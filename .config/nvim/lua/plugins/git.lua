@@ -14,6 +14,7 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
+        opts = {},
         keys = {
             {
                 "<leader>gb",
@@ -36,5 +37,5 @@ return {
                 desc = "Reset hunk"
             },
         },
-    }
+    },
 }
