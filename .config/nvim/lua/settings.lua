@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 -- show line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- indent
 vim.opt.expandtab = true
