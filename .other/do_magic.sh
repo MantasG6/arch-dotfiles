@@ -79,6 +79,7 @@ sudo pacman -S --needed --noconfirm transmission-gtk
 paru -S --needed --noconfirm windscribe-v2-bin
 sudo pacman -S --needed --noconfirm vlc
 sudo pacman -S --needed --noconfirm vlc-plugins-all
+curl -s "https://get.sdkman.io" | bash
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config

@@ -49,3 +49,7 @@ ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=white,bold'
 
 # Make hidden files count as "matches" so the list isn't empty
 _comp_options+=(globdots)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

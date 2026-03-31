@@ -28,6 +28,8 @@ return {
 				"vimdoc",
 				"xml",
 				"yaml",
+                "java",
+                "javadoc",
 			})
 
 			vim.api.nvim_create_autocmd("FileType", {

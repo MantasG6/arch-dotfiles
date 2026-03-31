@@ -18,7 +18,7 @@ return {
           desc = "Add a file to harpoon list",
         },
         {
-          "<leader>h",
+          "<leader>hh",
           function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
           desc = "Toggle harpoon menu",
         },
