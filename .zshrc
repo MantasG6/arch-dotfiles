@@ -35,6 +35,7 @@ alias grep='grep --color=auto'
 alias ll='ls -laF'
 alias vi='nvim'
 alias vim='nvim'
+alias k='kubectl'
 
 eval "$(oh-my-posh init zsh --config ~/.mantastheme.omp.json)"
 # Set up fzf key bindings and fuzzy completion
