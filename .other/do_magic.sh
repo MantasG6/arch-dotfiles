@@ -80,6 +80,9 @@ paru -S --needed --noconfirm windscribe-v2-bin
 sudo pacman -S --needed --noconfirm vlc
 sudo pacman -S --needed --noconfirm vlc-plugins-all
 curl -s "https://get.sdkman.io" | bash
+sudo pacman -S --needed --noconfirm docker docker-compose
+sudo ln -sf /usr/bin/iptables-legacy /usr/local/bin/iptables
+sudo ln -sf /usr/bin/ip6tables-legacy /usr/local/bin/ip6tables
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
