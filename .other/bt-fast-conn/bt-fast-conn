@@ -1,8 +1,6 @@
 #!/bin/sh
 case "$1/$2" in
   post/*|thaw/*)
-    # Give the Bluetooth daemon a moment to realize it's alive
-    sleep 2
     /usr/local/bin/toggle_bt_fast_connect.sh
     ;;
 esac
