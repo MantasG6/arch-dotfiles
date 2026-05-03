@@ -3,6 +3,20 @@ return {
         'nvim-java/nvim-java',
         config = function()
             require('java').setup()
+            vim.lsp.config('jdtls', {
+                settings = {
+                    java = {
+                        sources = {
+                            organizeImports = {
+                                staticStarThreshold = 3,
+                            },
+                        },
+                        saveActions = {
+                            organizeImports = true,
+                        },
+                    },
+                },
+            })
             vim.lsp.enable('jdtls')
         end,
     },
@@ -28,6 +42,11 @@ return {
                     function () dapui.close() end,
                     desc = "Close DAP UI"
                 },
+                {
+                    "<leader>xb",
+                    "<cmd>DapToggleBreakpoint<cr>",
+                    desc = "Toggle Breakpoint"
+                },
             }
         end,
         config = function()
@@ -39,6 +58,12 @@ return {
             end
             dap.listeners.before.launch.dapui_config = function()
                 dapui.open()
+            end
+            dap.listeners.before.event_terminated.dapui_config = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited.dapui_config = function()
+                dapui.close()
             end
         end,
     },
