@@ -76,13 +76,14 @@ sudo pacman -S --needed --noconfirm npm
 sudo pacman -S --needed --noconfirm yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
 ya pkg add BennyOe/tokyo-night
 sudo pacman -S --needed --noconfirm transmission-gtk
-paru -S --needed --noconfirm windscribe-v2-bin
 sudo pacman -S --needed --noconfirm vlc
 sudo pacman -S --needed --noconfirm vlc-plugins-all
 curl -s "https://get.sdkman.io" | bash
 sudo pacman -S --needed --noconfirm docker docker-compose
 sudo ln -sf /usr/bin/iptables-legacy /usr/local/bin/iptables
 sudo ln -sf /usr/bin/ip6tables-legacy /usr/local/bin/ip6tables
+sudo pacman -S --needed --noconfirm openvpn
+# follow https://wiki.archlinux.org/title/ProtonVPN to finish installing ProtonVPN
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
