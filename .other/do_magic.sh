@@ -52,6 +52,7 @@ xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 # Also set it for HTML files (optional but recommended)
 xdg-mime default firefox.desktop text/html
+xdg-mime default firefox.desktop application/pdf
 sudo pacman -S --needed --noconfirm zip unzip
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm otf-font-awesome
