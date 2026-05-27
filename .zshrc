@@ -29,6 +29,7 @@ setopt SHARE_HISTORY          # Share history between sessions
 setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits
 setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history
 
+unsetopt noclobber            # allow > to overwrite
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
