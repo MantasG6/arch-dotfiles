@@ -47,12 +47,12 @@ sudo pacman -S --needed --noconfirm gimp
 sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm firefox
 paru -S --needed --noconfirm google-chrome
-# Set Firefox as the default for http and https
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-# Also set it for HTML files (optional but recommended)
-xdg-mime default firefox.desktop text/html
-xdg-mime default firefox.desktop application/pdf
+# Set chrome defaults to firefox instead
+grep "MimeType" /usr/share/applications/com.google.Chrome.desktop \
+  | tr ';' '\n' \
+  | grep -v "^MimeType=" \
+  | grep -v "^$" \
+  | xargs -I{} xdg-mime default firefox.desktop {}
 sudo pacman -S --needed --noconfirm zip unzip
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm otf-font-awesome
