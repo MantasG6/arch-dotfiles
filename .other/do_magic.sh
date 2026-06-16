@@ -86,6 +86,7 @@ sudo ln -sf /usr/bin/ip6tables-legacy /usr/local/bin/ip6tables
 sudo pacman -S --needed --noconfirm openvpn
 sudo pacman -S --needed --noconfirm rsync
 # follow https://wiki.archlinux.org/title/ProtonVPN to finish installing ProtonVPN
+paru -S --needed --noconfirm jmtpfs # to connect android phone through USB
 # Link configurations
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
