@@ -8,7 +8,7 @@ return {
         },
         keys = {
             {
-                "<leader>tm",
+                "<leader>mt",
                 function() require('render-markdown').toggle() end,
                 desc = "Toggle markdown preview"
             },
