@@ -15,6 +15,11 @@ return {
                     desc = "Run the nearest test"
                 },
                 {
+                    "<leader>tf",
+                    function() neotest.run.run(vim.fn.expand("%")) end,
+                    desc = "Run tests in the current file"
+                },
+                {
                     "<leader>to",
                     function() neotest.output_panel.toggle() end,
                     desc = "Run the nearest test"
