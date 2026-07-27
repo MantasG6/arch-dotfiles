@@ -17,12 +17,12 @@
         "clock"
     ],
     "modules-right": [
-	"hyprland/language",
+        "hyprland/language",
         "pulseaudio",
         "network",
-	"bluetooth",
-        "backlight",
-        "battery"
+        "bluetooth",
+        "backlight"
+        // "battery"
     ],
     // Left modules
     "custom/archicon": {
