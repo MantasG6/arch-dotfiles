@@ -14,7 +14,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 -- other options
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 vim.opt.updatetime = 100
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
