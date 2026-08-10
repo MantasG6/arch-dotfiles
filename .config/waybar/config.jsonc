@@ -7,7 +7,7 @@
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	"custom/archicon",
+        "custom/archicon",
         "hyprland/workspaces",
         "cpu",
         "memory",
@@ -21,52 +21,52 @@
         "pulseaudio",
         "network",
         "bluetooth",
-        "backlight"
-        // "battery"
+        "backlight",
+        "custom/battery"
     ],
     // Left modules
     "custom/archicon": {
-	    "format": " ",
-	    "tooltip": false,
-	    "on-click": "$TERMINAL bash -c \"fastfetch; exec bash\""
+        "format": " ",
+        "tooltip": false,
+        "on-click": "$TERMINAL bash -c \"fastfetch; exec bash\""
     },
     "hyprland/workspaces": {
-	    "format": "{name}",
-	    "persistent-workspaces": {
-		    "*": [ 1,2,3,4,5,6 ]
-	    }
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": [ 1,2,3,4,5,6 ]
+        }
     },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-	"on-click": "$TERMINAL $SYS_MON"
+        "on-click": "$TERMINAL $SYS_MON"
     },
     "memory": {
         "format": "{}% ",
-	"on-click": "$TERMINAL $SYS_MON"
+        "on-click": "$TERMINAL $SYS_MON"
     },
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
-	"on-click": "$TERMINAL $SYS_MON"
+        "on-click": "$TERMINAL $SYS_MON"
     },
     // Center modules
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%Y-%m-%d  |  %H:%M}",
-	"calendar": {
-	    "format": {
-	        "today": "<span color='#ba181b'><b><u>{}</u></b></span>"
-	    }
-	},
-	"on-click": "$BROWSER calendar.google.com"
+        "calendar": {
+            "format": {
+                "today": "<span color='#ba181b'><b><u>{}</u></b></span>"
+            }
+        },
+        "on-click": "$BROWSER calendar.google.com"
     },
     // Right modules
     "hyprland/language": {
-	"format": "{shortDescription}",
-	"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
-	"tooltip-format": "{shortDescription}: {long}"
+        "format": "{shortDescription}",
+        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+        "tooltip-format": "{shortDescription}: {long}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -81,11 +81,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-	    "default": [" ⣀⣄⣀⣀⣀⣀⣀", " ⣀⣄⣤⣦⣀⣀⣀", " ⣀⣄⣤⣦⣶⣀⣀", " ⣀⣄⣤⣦⣶⣷⣀", " ⣀⣄⣤⣦⣶⣷⣿"]
+            "default": [" ⣀⣄⣀⣀⣀⣀⣀", " ⣀⣄⣤⣦⣀⣀⣀", " ⣀⣄⣤⣦⣶⣀⣀", " ⣀⣄⣤⣦⣶⣷⣀", " ⣀⣄⣤⣦⣶⣷⣿"]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-	"on-click-right": "pavucontrol",
-	"max-volume": 150
+        "on-click-right": "pavucontrol",
+        "max-volume": 150
     },
     "network": {
         "format-wifi": "󰖩  {signalStrength}%",
@@ -93,16 +93,16 @@
         "tooltip-format": "{essid}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": " 󰖪  ",
-	"on-click": "$TERMINAL impala"
+        "on-click": "$TERMINAL impala"
     },
     "bluetooth": {
-	"format": " {status}",
-	"format-disabled": "", // an empty format will hide the module
-	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-	"on-click": "$TERMINAL bluetui"
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "$TERMINAL bluetui"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -121,5 +121,11 @@
             "default": ["󱊡", "󱊢", "󱊣"],
             "charging": ["󱊤", "󱊥", "󱊦"]
         },
+    },
+    "custom/battery": {
+        "exec": "cat /sys/class/power_supply/BAT0/capacity",
+        "interval": 30,
+        "format": "{text}% 󱊣",
+        "tooltip": false,
     }
 }

@@ -103,8 +103,16 @@ button:hover {
     font-weight: bold;
 }
 
+#custom-battery {
+    margin: 2px;
+    border-radius: 3px;
+    background: @color2;
+    color: @color1;
+}
+
 #clock,
 #battery,
+#custom-battery,
 #backlight,
 #network,
 #pulseaudio,
@@ -127,7 +135,8 @@ button:hover {
 }
 #network,
 #backlight,
-#battery {
+#battery,
+#custom-battery {
     min-width: 55px;
 }
 
